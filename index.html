@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>5x5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/css-main.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.6/pixi.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+        <script src="proton.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div id="container" class="d-flex flex-column container">
+            <button id="json-btn" class="btn btn-lg btn-outline-info m-1" onclick="jsonRequest()">JSON data</button>
+            <button id="custom-btn" class="btn btn-lg btn-outline-info m-1"  onclick="showTable()">Custom configuration</button>
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th>rune</th>
+                        <th>consecutive blocks needed for a match</th>
+                        <th>spawn chance (%)</th>
+                        <th>active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="align-middle"><image src="images/runes_ind/rune1.png" style="width: 50px; height: 50px;" alt=""></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="consecutive-1" value="2" min="2" max="5"></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="chance-1" value="20" max="50"></td>
+                        <td class="align-middle" style="text-align: center;"> <input  type="checkbox" id="active-1" checked></td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle"><image src="images/runes_ind/rune2.png" style="width: 50px; height: 50px;" alt=""></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="consecutive-2" value="3" min="2" max="5"></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="chance-2" value="20" max="50"></td>
+                        <td class="align-middle" style="text-align: center;"> <input  type="checkbox" id="active-2" checked></td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle"><image src="images/runes_ind/rune3.png" style="width: 50px; height: 50px;" alt=""></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="consecutive-3" value="2" min="2" max="5"></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="chance-3" value="20" max="50"></td>
+                        <td class="align-middle" style="text-align: center;"> <input  type="checkbox" id="active-3" checked></td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle"><image src="images/runes_ind/rune4.png" style="width: 50px; height: 50px;" alt=""></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="consecutive-4" value="3" min="2" max="5"></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="chance-4" value="20" max="50"></td>
+                        <td class="align-middle" style="text-align: center;"> <input  type="checkbox" id="active-4" checked></td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle"><image src="images/runes_ind/rune5.png" style="width: 50px; height: 50px;" alt=""></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="consecutive-5" value="2" min="2" max="5"></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="chance-5" value="10" max="50"></td>
+                        <td class="align-middle" style="text-align: center;"> <input  type="checkbox" id="active-5" checked></td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle"><image src="images/runes_ind/rune6.png" style="width: 50px; height: 50px;" alt=""></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="consecutive-6" value="3" min="2" max="5"></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="chance-6" value="8" max="50"></td>
+                        <td class="align-middle" style="text-align: center;"> <input  type="checkbox" id="active-6" checked></td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle"><image src="images/runes_ind/rune7.png" style="width: 50px; height: 50px;" alt=""></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="consecutive-7" value="1" disabled  max="5"></td>
+                        <td class="align-middle"><input class="form-control" type="number" id="chance-7" value="2" max="5"></td>
+                        <td class="align-middle" style="text-align: center;"> <input  type="checkbox" id="active-7" checked></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="start-btn" style="display: none;" class="btn btn-lg btn-outline-info m-1" onclick="getConfiguration()">Start</button>
+        </div>
+        <div id='gameWindow' style="  margin: 0 auto;"></div>
+        <canvas id="canvas"></canvas>
+        <script src="js/app.js" type="text/javascript"></script>
+        <script src="js/customConfig.js" type="text/javascript"></script>
+    </body>
+</html>
