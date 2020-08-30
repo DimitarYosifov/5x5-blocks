@@ -30,3 +30,7 @@ canvas{
 .table{
     display: none;
 }
+
+#json-btn{
+    display: none;
+}
